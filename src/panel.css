@@ -1,0 +1,135 @@
+/* All rules are scoped under #prq-panel / .prq-* so nothing leaks into the
+   dashboard. Palette mirrors the dev dashboard's dark card UI. */
+
+.prq-panel {
+  --prq-bg: #1a1c1c;
+  --prq-border: rgba(255, 255, 255, 0.08);
+  --prq-text: #e3e5e5;
+  --prq-muted: #9aa0a0;
+  --prq-control-bg: #232626;
+  --prq-control-border: rgba(255, 255, 255, 0.14);
+  --prq-accent: #2e9e5b;
+  --prq-danger: #e0655f;
+
+  color-scheme: dark;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  background: var(--prq-bg);
+  border: 1px solid var(--prq-border);
+  border-radius: 12px;
+  color: var(--prq-text);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.prq-panel *,
+.prq-panel *::before,
+.prq-panel *::after {
+  box-sizing: border-box;
+}
+
+.prq-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prq-naming {
+  margin-top: 8px;
+}
+
+.prq-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--prq-muted);
+  white-space: nowrap;
+}
+
+
+.prq-select,
+.prq-input {
+  flex: 1 1 180px;
+  min-width: 140px;
+  height: 28px;
+  padding: 0 8px;
+  background: var(--prq-control-bg);
+  border: 1px solid var(--prq-control-border);
+  border-radius: 8px;
+  color: var(--prq-text);
+  font: inherit;
+}
+
+.prq-select:focus-visible,
+.prq-input:focus-visible,
+.prq-btn:focus-visible {
+  outline: 2px solid var(--prq-accent);
+  outline-offset: 1px;
+}
+
+.prq-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prq-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--prq-control-border);
+}
+
+.prq-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+}
+
+.prq-btn {
+  height: 28px;
+  padding: 0 10px;
+  background: var(--prq-control-bg);
+  border: 1px solid var(--prq-control-border);
+  border-radius: 8px;
+  color: var(--prq-text);
+  font: inherit;
+  font-weight: 550;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.prq-btn:hover:not(:disabled) {
+  background: #2c3030;
+}
+
+.prq-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.prq-btn-primary:not(:disabled) {
+  background: rgba(46, 158, 91, 0.18);
+  border-color: rgba(46, 158, 91, 0.55);
+}
+
+.prq-btn-primary:hover:not(:disabled) {
+  background: rgba(46, 158, 91, 0.3);
+}
+
+.prq-btn-danger:not(:disabled) {
+  color: var(--prq-danger);
+}
+
+.prq-btn-confirming:not(:disabled) {
+  background: rgba(224, 101, 95, 0.18);
+  border-color: rgba(224, 101, 95, 0.6);
+}
+
+.prq-status {
+  margin-top: 8px;
+  color: var(--prq-muted);
+}
